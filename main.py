@@ -30,7 +30,7 @@ if pagina == "📌 Sobre Mim":
     st.write("🧠 Apaixonado por resolver problemas complexos, explorar novas tecnologias e desenvolver soluções inovadoras.")
     st.write("🎯 Objetivo: Construir soluções inovadoras que unem Inteligência Artificial, Computação Quântica e Big Data, combinando tecnologia de ponta com impacto real.")
     st.write("🚀 Principais Experiências e Projetos:")
-    st.write("  ✅ Classificação de Síndromes Genéticas: Aplicação de machine learning, embeddings e visualização com t-SNE para diagnóstico médico.")
+    st.write("- Classificação de Síndromes Genéticas: Aplicação de machine learning, embeddings e visualização com t-SNE para diagnóstico médico.")
     st.write("  ✅ Geração de Resumo Automático com IA: Processamento de Big Data e NLP no Amazon Product Reviews, utilizando Docker e modelos de IA.")
     st.write("  ✅ Projetos de IoT: Experiência prática em robótica e hardware embarcado.")
 
