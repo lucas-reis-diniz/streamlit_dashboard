@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import matplotlib.pyplot as plt
+import scipy.stats as stats
 import seaborn as sns
 
 st.set_page_config(page_title="Dashboard e Portifolio Profissional", layout="wide")
