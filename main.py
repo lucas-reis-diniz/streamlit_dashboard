@@ -18,8 +18,8 @@ st.sidebar.markdown(
     </style>
     """, unsafe_allow_html=True)
 
-# st.sidebar.markdown('<img src="Profile.png" class="circle-img">', unsafe_allow_html=True)
-st.logo("Profile.png")
+st.sidebar.markdown('<img src="Profile.png", unsafe_allow_html=True)
+
 
 st.sidebar.title("Portifolio")
 pagina = st.sidebar.radio("Escolha uma página:", ["📌 Sobre Mim", "🎓 Formação e Experiência", "🛠️ Skills", "📊 Análise de Dados"])
