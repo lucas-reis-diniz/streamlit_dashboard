@@ -87,6 +87,8 @@ elif pagina == "🛠️ Skills":
 elif pagina == "📊 Análise de Dados":
     st.title("📊 Análise de Dados")
     st.write("Análise de Sentimentos e Avaliações de Consumidores: Visualização de Tendências e Correlação entre Variáveis")
+    st.write("## Porque a escolha desse dataset ?")
+    st.write("A escolha do dataset Consumer Sentiments and Ratings é altamente viável para o desenvolvimento de um sistema de geração de resumos automáticos de reviews com IA. Esse conjunto de dados contém avaliações detalhadas de consumidores sobre produtos e serviços, incluindo textos de reviews e classificações de sentimento, proporcionando uma base rica para análise e modelagem de linguagem natural (NLP).")
 
 
     @st.cache_data
