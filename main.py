@@ -18,7 +18,6 @@ st.sidebar.markdown(
     </style>
     """, unsafe_allow_html=True)
 
-# Insira o caminho para a sua imagem
 st.sidebar.markdown('<img src="Profile.png" class="circle-img">', unsafe_allow_html=True)
 
 st.sidebar.title("Portifolio")
@@ -74,7 +73,6 @@ elif pagina == "📊 Análise de Dados":
     @st.cache_data
     def load_data():
         df = pd.read_csv("market_comments.csv")
-        # Calculando a distribuição de sentimento (Tonality)
         df['positive'] = df['tonality'].apply(lambda x: 1 if x == 'positive' else 0)
         df['negative'] = df['tonality'].apply(lambda x: 1 if x == 'negative' else 0)
         return df
@@ -82,11 +80,9 @@ elif pagina == "📊 Análise de Dados":
 
     df = load_data()
 
-    # Exibindo os dados
     st.write("### Apresentação dos Dados")
     st.write(df.head())
 
-    # Medidas Centrais e Dispersão
     st.write("### Medidas Centrais e Dispersão")
     st.write(df.describe())
 
@@ -100,7 +96,6 @@ elif pagina == "📊 Análise de Dados":
     ]
 )
 
-    # Modifique todas as seções de gráficos para:
     if selected_chart == "Distribuição das Avaliações":
         st.write("### Distribuição das Avaliações")
         fig, ax = plt.subplots(figsize=(4, 3))
