@@ -6,6 +6,21 @@ import seaborn as sns
 
 st.set_page_config(page_title="Dashboard e Portifolio Profissional", layout="wide")
 
+st.sidebar.markdown(
+    """
+    <style>
+    .circle-img {
+        width: 100px; 
+        height: 100px;
+        border-radius: 50%;  
+        object-fit: cover;  
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+# Insira o caminho para a sua imagem
+st.sidebar.markdown('<img src="Profile.png" class="circle-img">', unsafe_allow_html=True)
+
 st.sidebar.title("Portifolio")
 pagina = st.sidebar.radio("Escolha uma página:", ["📌 Sobre Mim", "🎓 Formação e Experiência", "🛠️ Skills", "📊 Análise de Dados"])
 
