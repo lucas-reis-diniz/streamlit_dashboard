@@ -127,4 +127,12 @@ elif pagina == "📊 Análise de Dados":
     st.write("- **Distribuição Normal:** Como as avaliações de produtos geralmente seguem um padrão em torno de um valor médio, a Normal é útil para modelar a variação do Score.")
     st.write("- **Distribuição Binomial:** Utilizada para modelar o número de votos úteis de uma avaliação, pois representa um número fixo de tentativas (votos) com duas possíveis saídas (útil ou não útil).")
 
+    fig, ax = plt.subplots()
+    sns.histplot(df["Score"], bins=20, kde=True, ax=ax)
+    st.pyplot(fig)
+
+    fig, ax = plt.subplots()
+    sns.histplot(df["HelpfulnessNumerator"], bins=20, kde=True, ax=ax)
+    st.pyplot(fig)
+
 st.sidebar.write("Desenvolvido por Lucas Reis Diniz")
