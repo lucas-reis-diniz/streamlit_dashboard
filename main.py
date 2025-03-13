@@ -23,7 +23,7 @@ st.sidebar.title("💼 Portifolio")
 pagina = st.sidebar.radio("Escolha uma página:", ["📌 Sobre Mim", "🎓 Formação e Experiência", "🛠️ Skills", "📊 Análise de Dados"])
 
 if pagina == "📌 Sobre Mim":
-    st.image("Profile.png", caption="Minha Foto", width=300)
+    st.image("Profile.png", caption="Minha Foto :)", width=300)
     st.title("Bem-vindo ao meu Dashboard Profissional")
     st.write("## Lucas Reis Diniz")
     st.write("💡 Engenheiro de Software em formação na FIAP, com sólida experiência em C++ (5 anos) e forte interesse em Inteligência Artificial, Big Data e Computação Quântica.")
