@@ -76,7 +76,7 @@ elif pagina == "📊 Análise de Dados":
 
     # Distribuição das Avaliações
     st.write("### Distribuição das Avaliações")
-    fig, ax = plt.subplots(figsize=(4, 3))  # Tamanho menor
+    fig, ax = plt.subplots(figsize=(2, 1))  # Tamanho menor
     sns.histplot(df["rating"], bins=5, kde=True, ax=ax)
     plt.tight_layout()  # Ajusta o layout
     st.pyplot(fig, use_container_width=True)
