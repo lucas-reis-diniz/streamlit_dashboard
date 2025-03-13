@@ -45,23 +45,41 @@ elif pagina == "🎓 Formação e Experiência":
     st.write(" - Freelances Envolvendo Analise da Dados e ML")
 
 elif pagina == "🛠️ Skills":
-    st.title("🛠️ Skills")
-    st.write("### Tecnologias e Ferramentas")
-    st.write("- Python")
-    st.write("- R")
-    st.write("- C++")
-    st.write("- Flutter")
-    st.write("- Docker")
-    st.write("- Big Data")
-    st.write("- Q#")
-    st.write("- Data Analytics")
-    st.write("### Soft Skills")
-    st.write("- Resolução de problemas")
-    st.write("- Trabalho em equipe")
-    st.write("- Pensamento analítico")
-    st.write("- Aprendizado Rapido")
-    st.write("- Criatividade e Inovação")
-    st.write("- Gestão de Tempo")
+    with st.container():
+    st.header("📚 Tecnologias & Ferramentas")
+    cols = st.columns(3)
+    
+    tech_skills = {
+        "Linguagens": ["Python", "R", "C++", "Q#"],
+        "Desenvolvimento": ["Flutter", "Docker", "Big Data"],
+        "Análise": ["Data Analytics", "Pandas", "SQL", "Power BI"]
+    }
+
+    for category, skills in tech_skills.items():
+        with cols[0 if category == "Linguagens" else 1 if category == "Desenvolvimento" else 2]:
+            st.subheader(f"🔧 {category}")
+            for skill in skills:
+                st.markdown(f"- {skill}")
+
+# Seção de Soft Skills
+with st.container():
+    st.header("🌟 Competências Interpessoais")
+    cols = st.columns(2)
+    
+    soft_skills = [
+        ("💡", "Resolução de Problemas Complexos"),
+        ("🤝", "Trabalho em Equipe Multidisciplinar"),
+        ("🧠", "Pensamento Analítico e Estratégico"),
+        ("🚀", "Aprendizado Ágil e Contínuo"),
+        ("🎨", "Criatividade e Inovação"),
+        ("⏳", "Gestão de Tempo e Prioridades"),
+        ("📢", "Comunicação Técnica Clara"),
+        ("🌐", "Adaptação Intercultural")
+    ]
+
+    for i, (icon, skill) in enumerate(soft_skills):
+        with cols[0] if i % 2 == 0 else cols[1]:
+            st.markdown(f"{icon} **{skill}**")
     st.write("- Comunicação Tecnica")
 
 
