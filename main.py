@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -121,42 +122,35 @@ elif pagina == "📊 Análise de Dados":
 )
 
     if selected_chart == "Distribuição das Avaliações":
-        st.write("### Distribuição das Avaliações")
-        fig, ax = plt.subplots(figsize=(4, 3))
-        sns.histplot(df["rating"], bins=5, kde=True, ax=ax)
-        st.pyplot(fig, use_container_width=True)
-    
+    st.write("### Distribuição das Avaliações")
+    fig = px.histogram(df, x="rating", nbins=5, marginal="box", title="Distribuição das Avaliações", opacity=0.7)
+    st.plotly_chart(fig, use_container_width=True)
+
     elif selected_chart == "Tonalidade dos Comentários":
         st.write("### Distribuição da Tonalidade dos Comentários")
-        fig, ax = plt.subplots(figsize=(4, 3))
-        sns.countplot(x='tonality', data=df, ax=ax)
-        plt.tight_layout()
-        st.pyplot(fig, use_container_width=True)
+        fig = px.bar(df["tonality"].value_counts().reset_index(), 
+                     x="index", y="tonality", title="Distribuição da Tonalidade dos Comentários")
+        st.plotly_chart(fig, use_container_width=True)
     
     elif selected_chart == "Distribuição Probabilística":
         st.write("### Aplicação de Distribuições Probabilísticas")
-        fig, ax = plt.subplots(figsize=(4, 3))
-        sns.histplot(df["rating"], bins=5, kde=True, ax=ax)
-        plt.tight_layout()
-        st.pyplot(fig, use_container_width=True)
+        fig = px.histogram(df, x="rating", nbins=5, marginal="box", title="Distribuição Probabilística", opacity=0.7)
+        st.plotly_chart(fig, use_container_width=True)
     
     elif selected_chart == "Análise de Sentimento":
         st.write("### Análise de Sentimento dos Comentários")
-        fig, ax = plt.subplots(figsize=(4, 3))
-        sns.countplot(x='tonality', data=df, ax=ax)
-        plt.tight_layout()
-        st.pyplot(fig, use_container_width=True)
-
+        fig = px.bar(df["tonality"].value_counts().reset_index(), 
+                     x="index", y="tonality", title="Análise de Sentimento")
+        st.plotly_chart(fig, use_container_width=True)
+    
     st.write("## Foram escolhidas as distribuições Normal e Binomial:")
     st.write("- **Distribuição Normal:** Como as avaliações de produtos geralmente seguem um padrão em torno de um valor médio, a Normal é útil para modelar a variação do Score.")
     st.write("- **Distribuição Binomial:** Utilizada para modelar o número de votos úteis de uma avaliação, pois representa um número fixo de tentativas (votos) com duas possíveis saídas (útil ou não útil).")
-
-    fig, ax = plt.subplots()
-    sns.histplot(df["rating"], bins=20, kde=True, ax=ax)
-    st.pyplot(fig)
-
-    fig, ax = plt.subplots()
-    sns.histplot(df["HelpfulnessNumerator"], bins=20, kde=True, ax=ax)
-    st.pyplot(fig)
+    
+    fig1 = px.histogram(df, x="rating", nbins=20, marginal="box", title="Distribuição Normal das Avaliações", opacity=0.7)
+    st.plotly_chart(fig1, use_container_width=True)
+    
+    fig2 = px.histogram(df, x="HelpfulnessNumerator", nbins=20, marginal="box", title="Distribuição Binomial dos Votos Úteis", opacity=0.7)
+    st.plotly_chart(fig2, use_container_width=True)
 
 st.sidebar.write("Desenvolvido por Lucas Reis Diniz")
