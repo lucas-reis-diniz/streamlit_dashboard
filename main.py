@@ -117,8 +117,11 @@ elif pagina == "📊 Análise de Dados":
     options=[
         "Distribuição das Avaliações",
         "Tonalidade dos Comentários",
-        "Distribuição Probabilística",
-        "Análise de Sentimento"
+        "Distribuição Binomial dos Votos Úteis",
+        "Distribuição de Sentimentos Positivos e Negativos",
+        "Distribuição de Categorias de Produtos",
+        "Distribuição por Marca",
+        "Distribuição Temporal das Avaliações"
     ]
 )
 
