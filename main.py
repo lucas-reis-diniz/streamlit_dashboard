@@ -153,7 +153,7 @@ elif pagina == "📊 Análise de Dados":
     fig1 = px.histogram(df, x="rating", nbins=20, marginal="box", title="Distribuição Normal das Avaliações", opacity=0.7)
     st.plotly_chart(fig1, use_container_width=True)
     
-    fig2 = px.histogram(df, x="HelpfulnessNumerator", nbins=20, marginal="box", title="Distribuição Binomial dos Votos Úteis", opacity=0.7)
+    fig2 = px.histogram(df, x="binomial", nbins=2, marginal="box", title="Distribuição Binomial dos Votos Úteis", opacity=0.7)
     st.plotly_chart(fig2, use_container_width=True)
 
 st.sidebar.write("Desenvolvido por Lucas Reis Diniz")
