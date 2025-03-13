@@ -102,6 +102,11 @@ elif pagina == "📊 Análise de Dados":
     st.write("### Apresentação dos Dados")
     st.write(df.head())
 
+    st.title("Identificação das variaveis")
+    df["at"] = pd.to_datetime(df["at"])
+    variables_type = df.types
+    st.write(variables_type)
+
     st.write("### Medidas Centrais e Dispersão")
     st.write(df.describe())
 
