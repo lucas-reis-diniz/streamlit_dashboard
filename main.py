@@ -103,7 +103,6 @@ elif pagina == "📊 Análise de Dados":
     st.write(df.head())
 
     st.title("Identificação das variaveis")
-    df["at"] = pd.to_datetime(df["at"])
     variables_type = df.types
     st.write(variables_type)
 
