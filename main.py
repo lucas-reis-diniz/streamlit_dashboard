@@ -128,7 +128,7 @@ elif pagina == "📊 Análise de Dados":
     st.write("- **Distribuição Binomial:** Utilizada para modelar o número de votos úteis de uma avaliação, pois representa um número fixo de tentativas (votos) com duas possíveis saídas (útil ou não útil).")
 
     fig, ax = plt.subplots()
-    sns.histplot(df["Score"], bins=20, kde=True, ax=ax)
+    sns.histplot(df["rating"], bins=20, kde=True, ax=ax)
     st.pyplot(fig)
 
     fig, ax = plt.subplots()
