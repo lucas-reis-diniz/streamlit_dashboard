@@ -76,25 +76,25 @@ elif pagina == "📊 Análise de Dados":
 
     # Distribuição das Avaliações
     st.write("### Distribuição das Avaliações")
-    fig, ax = plt.subplots(figsize=(4, 4))
+    fig, ax = plt.subplots(figsize=(2, 2))
     sns.histplot(df["rating"], bins=5, kde=True, ax=ax)
     st.pyplot(fig)
 
     # Distribuição da Tonalidade dos Comentários (Sentimentos)
     st.write("### Distribuição da Tonalidade dos Comentários")
-    fig, ax = plt.subplots(figsize=(4, 4))
+    fig, ax = plt.subplots(figsize=(2, 2))
     sns.countplot(x='tonality', data=df, ax=ax)
     st.pyplot(fig)
 
     # Aplicação de Distribuições Probabilísticas (Analisando a coluna rating)
     st.write("### Aplicação de Distribuições Probabilísticas")
-    fig, ax = plt.subplots(figsize=(4, 4))
+    fig, ax = plt.subplots(figsize=(2, 2))
     sns.histplot(df["rating"], bins=5, kde=True, ax=ax)
     st.pyplot(fig)
 
     # Análise de Sentimento (Positivo e Negativo)
     st.write("### Análise de Sentimento dos Comentários")
-    fig, ax = plt.subplots(figsize=(4, 4))
+    fig, ax = plt.subplots(figsize=(2, 2))
     sns.countplot(x='tonality', data=df, ax=ax)
     st.pyplot(fig)
 st.sidebar.write("Desenvolvido por Lucas Reis Diniz")
