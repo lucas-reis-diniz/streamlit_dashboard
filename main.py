@@ -177,7 +177,7 @@ elif pagina == "📊 Análise de Dados":
     st.write("- **Distribuição Normal:** Como as avaliações de produtos geralmente seguem um padrão em torno de um valor médio, a Normal é útil para modelar a variação do Score.")
     st.write("- **Distribuição Binomial:** Utilizada para modelar o número de votos úteis de uma avaliação, pois representa um número fixo de tentativas (votos) com duas possíveis saídas (útil ou não útil).")
     
-    fig1 = px.histogram(df, x="rating", nbins=20, marginal="box", title="Distribuição Normal das Avaliações", opacity=0.7)
+    fig1 = px.histogram(df, x="rating", nbins=100, marginal="box", title="Distribuição Normal das Avaliações", opacity=0.7)
     st.plotly_chart(fig1, use_container_width=True)
     
     fig2 = px.histogram(df, x="positive", nbins=2, marginal="box", title="Distribuição Binomial dos Votos Úteis", opacity=0.7)
