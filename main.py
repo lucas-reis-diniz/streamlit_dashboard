@@ -123,7 +123,7 @@ elif pagina == "📊 Análise de Dados":
         plt.tight_layout()
         st.pyplot(fig, use_container_width=True)
 
-    st.write("Foram escolhidas as distribuições Normal e Binomial:")
+    st.write("## Foram escolhidas as distribuições Normal e Binomial:")
     st.write("- **Distribuição Normal:** Como as avaliações de produtos geralmente seguem um padrão em torno de um valor médio, a Normal é útil para modelar a variação do Score.")
     st.write("- **Distribuição Binomial:** Utilizada para modelar o número de votos úteis de uma avaliação, pois representa um número fixo de tentativas (votos) com duas possíveis saídas (útil ou não útil).")
 
