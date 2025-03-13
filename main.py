@@ -106,9 +106,6 @@ elif pagina == "📊 Análise de Dados":
     st.write("### Apresentação dos Dados")
     st.write(df.head())
 
-    st.title("Identificação das variaveis")
-    st.write(df.dtypes)
-
     st.write("### Medidas Centrais e Dispersão")
     st.write(df.describe())
 
