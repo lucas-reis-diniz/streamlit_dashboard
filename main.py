@@ -100,7 +100,6 @@ elif pagina == "📊 Análise de Dados":
         st.write("### Distribuição das Avaliações")
         fig, ax = plt.subplots(figsize=(4, 3))
         sns.histplot(df["rating"], bins=5, kde=True, ax=ax)
-        plt.tight_layout()
         st.pyplot(fig, use_container_width=True)
     
     elif selected_chart == "Tonalidade dos Comentários":
