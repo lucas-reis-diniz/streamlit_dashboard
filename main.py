@@ -76,26 +76,26 @@ elif pagina == "📊 Análise de Dados":
 
     # Distribuição das Avaliações
     st.write("### Distribuição das Avaliações")
-    fig, ax = plt.subplots(figsize=(2, 1))  # Tamanho menor
+    fig, ax = plt.subplots(figsize=(4, 3))  
     sns.histplot(df["rating"], bins=5, kde=True, ax=ax)
     plt.tight_layout()  # Ajusta o layout
     st.pyplot(fig, use_container_width=True)
 
     # Distribuição da Tonalidade dos Comentários (Sentimentos)
     st.write("### Distribuição da Tonalidade dos Comentários")
-    fig, ax = plt.subplots(figsize=(2, 2))
+    fig, ax = plt.subplots(figsize=(4, 3)) 
     sns.countplot(x='tonality', data=df, ax=ax)
-    st.pyplot(fig)
+    st.pyplot(fig, use_container_width=True)
 
     # Aplicação de Distribuições Probabilísticas (Analisando a coluna rating)
     st.write("### Aplicação de Distribuições Probabilísticas")
-    fig, ax = plt.subplots(figsize=(2, 2))
+    fig, ax = plt.subplots(figsize=(4, 3)) 
     sns.histplot(df["rating"], bins=5, kde=True, ax=ax)
-    st.pyplot(fig)
+    st.pyplot(fig, use_container_width=True)
 
     # Análise de Sentimento (Positivo e Negativo)
     st.write("### Análise de Sentimento dos Comentários")
-    fig, ax = plt.subplots(figsize=(2, 2))
+    fig, ax = plt.subplots(figsize=(4, 3)) 
     sns.countplot(x='tonality', data=df, ax=ax)
-    st.pyplot(fig)
+    st.pyplot(fig, use_container_width=True)
 st.sidebar.write("Desenvolvido por Lucas Reis Diniz")
