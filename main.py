@@ -19,7 +19,7 @@ st.sidebar.markdown(
     """, unsafe_allow_html=True)
 
 
-st.sidebar.title("Portifolio 💼")
+st.sidebar.title("💼 Portifolio")
 pagina = st.sidebar.radio("Escolha uma página:", ["📌 Sobre Mim", "🎓 Formação e Experiência", "🛠️ Skills", "📊 Análise de Dados"])
 
 if pagina == "📌 Sobre Mim":
