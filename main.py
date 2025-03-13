@@ -103,8 +103,7 @@ elif pagina == "📊 Análise de Dados":
     st.write(df.head())
 
     st.title("Identificação das variaveis")
-    variables_type = df.dtypes()
-    st.write(variables_type)
+    st.write(df.dtypes())
 
     st.write("### Medidas Centrais e Dispersão")
     st.write(df.describe())
