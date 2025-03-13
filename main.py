@@ -122,9 +122,9 @@ elif pagina == "📊 Análise de Dados":
 )
 
     if selected_chart == "Distribuição das Avaliações":
-    st.write("### Distribuição das Avaliações")
-    fig = px.histogram(df, x="rating", nbins=5, marginal="box", title="Distribuição das Avaliações", opacity=0.7)
-    st.plotly_chart(fig, use_container_width=True)
+        st.write("### Distribuição das Avaliações")
+        fig = px.histogram(df, x="rating", nbins=5, marginal="box", title="Distribuição das Avaliações", opacity=0.7)
+        st.plotly_chart(fig, use_container_width=True)
 
     elif selected_chart == "Tonalidade dos Comentários":
         st.write("### Distribuição da Tonalidade dos Comentários")
