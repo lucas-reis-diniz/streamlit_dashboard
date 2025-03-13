@@ -135,9 +135,18 @@ elif pagina == "📊 Análise de Dados":
     
     elif selected_chart == "Distribuição Probabilística":
         st.write("### Aplicação de Distribuições Probabilísticas")
-        fig = px.histogram(df, x="rating", nbins=5, marginal="box", title="Distribuição Probabilística", opacity=0.7)
-        st.plotly_chart(fig, use_container_width=True)
     
+        # Cálculo da distribuição normal ajustada
+        mu, sigma = df["rating"].mean(), df["rating"].std()
+        x = np.linspace(df["rating"].min(), df["rating"].max(), 100)
+        y = stats.norm.pdf(x, mu, sigma)
+    
+        # Criando um gráfico interativo
+        fig = px.histogram(df, x="rating", nbins=5, opacity=0.6, histnorm="probability density", title="Distribuição Probabilística")
+        fig.add_scatter(x=x, y=y, mode="lines", name="Distribuição Normal", line=dict(color="red"))
+    
+        st.plotly_chart(fig, use_container_width=True)
+        
     elif selected_chart == "Análise de Sentimento":
         st.write("### Análise de Sentimento dos Comentários")
         tonality_counts = df["tonality"].value_counts().reset_index()
