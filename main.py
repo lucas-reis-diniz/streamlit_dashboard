@@ -128,8 +128,9 @@ elif pagina == "📊 Análise de Dados":
 
     elif selected_chart == "Tonalidade dos Comentários":
         st.write("### Distribuição da Tonalidade dos Comentários")
-        fig = px.bar(df["tonality"].value_counts().reset_index(), 
-                     x="index", y="tonality", title="Distribuição da Tonalidade dos Comentários")
+        tonality_counts = df["tonality"].value_counts().reset_index()
+        tonality_counts.columns = ["tonality", "count"]  # Renomeando colunas
+        fig = px.bar(tonality_counts, x="tonality", y="count", title="Distribuição da Tonalidade dos Comentários")
         st.plotly_chart(fig, use_container_width=True)
     
     elif selected_chart == "Distribuição Probabilística":
@@ -139,8 +140,9 @@ elif pagina == "📊 Análise de Dados":
     
     elif selected_chart == "Análise de Sentimento":
         st.write("### Análise de Sentimento dos Comentários")
-        fig = px.bar(df["tonality"].value_counts().reset_index(), 
-                     x="index", y="tonality", title="Análise de Sentimento")
+        tonality_counts = df["tonality"].value_counts().reset_index()
+        tonality_counts.columns = ["tonality", "count"]  # Renomeando colunas
+        fig = px.bar(tonality_counts, x="tonality", y="count", title="Análise de Sentimento")
         st.plotly_chart(fig, use_container_width=True)
     
     st.write("## Foram escolhidas as distribuições Normal e Binomial:")
