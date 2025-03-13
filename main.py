@@ -46,7 +46,7 @@ elif pagina == "🎓 Formação e Experiência":
 
 elif pagina == "🛠️ Skills":
     with st.container():
-    st.header("📚 Tecnologias & Ferramentas")
+    st.title("📚 Tecnologias & Ferramentas")
     cols = st.columns(3)
     
     tech_skills = {
@@ -63,7 +63,7 @@ elif pagina == "🛠️ Skills":
 
 # Seção de Soft Skills
 with st.container():
-    st.header("🌟 Competências Interpessoais")
+    st.title("🌟 Competências Interpessoais")
     cols = st.columns(2)
     
     soft_skills = [
