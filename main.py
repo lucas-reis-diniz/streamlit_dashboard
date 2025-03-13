@@ -124,28 +124,55 @@ elif pagina == "📊 Análise de Dados":
 
     if selected_chart == "Distribuição das Avaliações":
         st.write("### Distribuição das Avaliações")
+        # Distribuição das avaliações (coluna 'rating')
         fig = px.histogram(df, x="rating", nbins=5, marginal="box", title="Distribuição das Avaliações", opacity=0.7)
         st.plotly_chart(fig, use_container_width=True)
 
     elif selected_chart == "Tonalidade dos Comentários":
         st.write("### Distribuição da Tonalidade dos Comentários")
+        # Contagem de tonalidade dos comentários (coluna 'tonality')
         tonality_counts = df["tonality"].value_counts().reset_index()
-        tonality_counts.columns = ["tonality", "count"] 
+        tonality_counts.columns = ["tonality", "count"]
         fig = px.bar(tonality_counts, x="tonality", y="count", title="Distribuição da Tonalidade dos Comentários")
         st.plotly_chart(fig, use_container_width=True)
     
-    elif selected_chart == "Distribuição Probabilística":
-        st.write("### Aplicação de Distribuições Probabilísticas")
-        fig = px.histogram(df, x="rating", nbins=5, marginal="box", title="Distribuição Probabilística", opacity=0.7)
-        st.plotly_chart(fig, use_container_width=True)
-        
-    elif selected_chart == "Análise de Sentimento":
-        st.write("### Análise de Sentimento dos Comentários")
-        tonality_counts = df["tonality"].value_counts().reset_index()
-        tonality_counts.columns = ["tonality", "count"]
-        fig = px.bar(tonality_counts, x="tonality", y="count", title="Análise de Sentimento")
+    elif selected_chart == "Distribuição Binomial dos Votos Úteis":
+        st.write("### Distribuição Binomial dos Votos Úteis")
+        # Distribuição binomial baseada na coluna 'positive' (considerando votos úteis)
+        fig = px.histogram(df, x="positive", nbins=2, marginal="box", title="Distribuição Binomial dos Votos Úteis", opacity=0.7)
         st.plotly_chart(fig, use_container_width=True)
     
+    elif selected_chart == "Distribuição de Sentimentos Positivos e Negativos":
+        st.write("### Distribuição de Sentimentos Positivos e Negativos")
+        # Análise de sentimentos com base nas colunas 'positive' e 'negative'
+        sentiment_counts = df[['positive', 'negative']].sum().reset_index()
+        sentiment_counts.columns = ['sentiment', 'count']
+        fig = px.bar(sentiment_counts, x="sentiment", y="count", title="Distribuição de Sentimentos Positivos e Negativos")
+        st.plotly_chart(fig, use_container_width=True)
+    
+    elif selected_chart == "Distribuição de Categorias de Produtos":
+        st.write("### Distribuição de Categorias de Produtos")
+        # Contagem de categorias de produtos (coluna 'item_category')
+        category_counts = df["item_category"].value_counts().reset_index()
+        category_counts.columns = ["item_category", "count"]
+        fig = px.bar(category_counts, x="item_category", y="count", title="Distribuição das Categorias de Produtos")
+        st.plotly_chart(fig, use_container_width=True)
+    
+    elif selected_chart == "Distribuição por Marca":
+        st.write("### Distribuição por Marca")
+        # Contagem de avaliações por marca (coluna 'brand')
+        brand_counts = df["brand"].value_counts().reset_index()
+        brand_counts.columns = ["brand", "count"]
+        fig = px.bar(brand_counts, x="brand", y="count", title="Distribuição de Avaliações por Marca")
+        st.plotly_chart(fig, use_container_width=True)
+    
+    elif selected_chart == "Distribuição Temporal das Avaliações":
+        st.write("### Distribuição Temporal das Avaliações")
+        # Distribuição das avaliações ao longo do tempo (coluna 'date')
+        df['date'] = pd.to_datetime(df['date'])  # Converte para o tipo datetime
+        fig = px.histogram(df, x="date", nbins=30, title="Distribuição Temporal das Avaliações")
+        st.plotly_chart(fig, use_container_width=True)
+        
     st.write("## Foram escolhidas as distribuições Normal e Binomial:")
     st.write("- **Distribuição Normal:** Como as avaliações de produtos geralmente seguem um padrão em torno de um valor médio, a Normal é útil para modelar a variação do Score.")
     st.write("- **Distribuição Binomial:** Utilizada para modelar o número de votos úteis de uma avaliação, pois representa um número fixo de tentativas (votos) com duas possíveis saídas (útil ou não útil).")
